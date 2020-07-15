@@ -1,0 +1,737 @@
+{
+    "Additionals": {
+        "AddtionalInfo": [
+            {
+                "Key": "LAND USE AND RESTRICTIONS",
+                "Value": [
+                    {
+                        "InfoName": "Community Development District",
+                        "InfoValue": "COUNTYGIS",
+                        "Message": ""
+                    },
+                    {
+                        "InfoName": "Community Redevelopment Area",
+                        "InfoValue": "COUNTYGIS",
+                        "Message": ""
+                    },
+                    {
+                        "InfoName": "Empowerment Zone",
+                        "InfoValue": "COUNTYGIS",
+                        "Message": ""
+                    },
+                    {
+                        "InfoName": "Enterprise Zone",
+                        "InfoValue": "COUNTYGIS",
+                        "Message": ""
+                    },
+                    {
+                        "InfoName": "Urban Development",
+                        "InfoValue": "COUNTYGIS",
+                        "Message": ""
+                    },
+                    {
+                        "InfoName": "Zoning Code",
+                        "InfoValue": "COUNTYGIS",
+                        "Message": ""
+                    },
+                    {
+                        "InfoName": "Existing Land Use",
+                        "InfoValue": "COUNTYGIS",
+                        "Message": ""
+                    },
+                    {
+                        "InfoName": "Government Agencies and Community Services",
+                        "InfoValue": "http://gisweb.miamidade.gov/communityservices/CommunityServicesAll.html?x=&y=&bufferDistance=5&address=1265 NW 172 TER",
+                        "Message": ""
+                    }
+                ]
+            },
+            {
+                "Key": "OTHER GOVERNMENTAL JURISDICTIONS",
+                "Value": [
+                    {
+                        "InfoName": "Business Incentives",
+                        "InfoValue": "https://gisweb.miamidade.gov/businessincentive/default.aspx?searchtype=address&amp;paramvalue=",
+                        "Message": ""
+                    },
+                    {
+                        "InfoName": "Childrens Trust",
+                        "InfoValue": "https://www.thechildrenstrust.org/",
+                        "Message": ""
+                    },
+                    {
+                        "InfoName": "City of Miami Gardens",
+                        "InfoValue": "http://www.miamigardens-fl.gov/default.aspx",
+                        "Message": ""
+                    },
+                    {
+                        "InfoName": "Environmental Considerations",
+                        "InfoValue": "https://gisweb.miamidade.gov/environmentalconsiderations/default.aspx?searchtype=address&paramvalue=1265 NW 172 TER",
+                        "Message": ""
+                    },
+                    {
+                        "InfoName": "Florida Inland Navigation District",
+                        "InfoValue": "http://www.aicw.org",
+                        "Message": ""
+                    },
+                    {
+                        "InfoName": "PA Bulletin Board",
+                        "InfoValue": "http://bbs.miamidade.gov/",
+                        "Message": ""
+                    },
+                    {
+                        "InfoName": "Special Taxing District and Other Non-Ad valorem Assessment",
+                        "InfoValue": "http://www8.miamidade.gov/Apps/PA/PAOnlineTools/Taxes/NonAdvalorem.aspx?folio=3421110110560",
+                        "Message": ""
+                    },
+                    {
+                        "InfoName": "School Board",
+                        "InfoValue": "http://www.dadeschools.net/",
+                        "Message": ""
+                    },
+                    {
+                        "InfoName": "South Florida Water Mgmt District",
+                        "InfoValue": "http://www.sfwmd.gov/portal/page/portal/sfwmdmain/home%20page",
+                        "Message": ""
+                    },
+                    {
+                        "InfoName": "Tax Collector",
+                        "InfoValue": "http://www.miamidade.gov/taxcollector/",
+                        "Message": ""
+                    }
+                ]
+            }
+        ],
+        "FooterMessage": "",
+        "HeaderMessage": "* The information listed below is not derived from the Property Appraiser's Office records.  It is provided for convenience and is derived from other government agencies."
+    },
+    "Assessment": {
+        "AssessmentInfos": [
+            {
+                "AssessedValue": 188841,
+                "BuildingOnlyValue": 255071,
+                "ExtraFeatureValue": 5317,
+                "LandValue": 78750,
+                "Message": null,
+                "TotalValue": 339138,
+                "Year": 2020
+            },
+            {
+                "AssessedValue": 184596,
+                "BuildingOnlyValue": 258096,
+                "ExtraFeatureValue": 5379,
+                "LandValue": 69300,
+                "Message": null,
+                "TotalValue": 332775,
+                "Year": 2019
+            },
+            {
+                "AssessedValue": 181155,
+                "BuildingOnlyValue": 261120,
+                "ExtraFeatureValue": 5440,
+                "LandValue": 57881,
+                "Message": null,
+                "TotalValue": 324441,
+                "Year": 2018
+            }
+        ],
+        "Messages": [
+            {
+                "Message": "",
+                "Year": 2019
+            },
+            {
+                "Message": "",
+                "Year": 2018
+            }
+        ]
+    },
+    "Benefit": {
+        "BenefitInfos": [
+            {
+                "Description": "Save Our Homes Cap",
+                "Message": null,
+                "Seq": "4",
+                "TaxYear": 2020,
+                "Type": "Assessment Reduction",
+                "Url": "http://www.miamidade.gov/pa/amendment_10.asp",
+                "Value": 150297
+            },
+            {
+                "Description": "Save Our Homes Cap",
+                "Message": null,
+                "Seq": "4",
+                "TaxYear": 2019,
+                "Type": "Assessment Reduction",
+                "Url": "http://www.miamidade.gov/pa/amendment_10.asp",
+                "Value": 148179
+            },
+            {
+                "Description": "Save Our Homes Cap",
+                "Message": null,
+                "Seq": "4",
+                "TaxYear": 2018,
+                "Type": "Assessment Reduction",
+                "Url": "http://www.miamidade.gov/pa/amendment_10.asp",
+                "Value": 143286
+            },
+            {
+                "Description": "Homestead",
+                "Message": null,
+                "Seq": "5",
+                "TaxYear": 2020,
+                "Type": "Exemption",
+                "Url": "http://www.miamidade.gov/pa/exemptions_homestead.asp",
+                "Value": 25000
+            },
+            {
+                "Description": "Homestead",
+                "Message": null,
+                "Seq": "5",
+                "TaxYear": 2019,
+                "Type": "Exemption",
+                "Url": "http://www.miamidade.gov/pa/exemptions_homestead.asp",
+                "Value": 25000
+            },
+            {
+                "Description": "Homestead",
+                "Message": null,
+                "Seq": "5",
+                "TaxYear": 2018,
+                "Type": "Exemption",
+                "Url": "http://www.miamidade.gov/pa/exemptions_homestead.asp",
+                "Value": 25000
+            },
+            {
+                "Description": "Second Homestead",
+                "Message": null,
+                "Seq": "10",
+                "TaxYear": 2020,
+                "Type": "Exemption",
+                "Url": "http://www.miamidade.gov/pa/exemptions_homestead_additional.asp",
+                "Value": 25000
+            },
+            {
+                "Description": "Second Homestead",
+                "Message": null,
+                "Seq": "10",
+                "TaxYear": 2019,
+                "Type": "Exemption",
+                "Url": "http://www.miamidade.gov/pa/exemptions_homestead_additional.asp",
+                "Value": 25000
+            },
+            {
+                "Description": "Second Homestead",
+                "Message": null,
+                "Seq": "10",
+                "TaxYear": 2018,
+                "Type": "Exemption",
+                "Url": "http://www.miamidade.gov/pa/exemptions_homestead_additional.asp",
+                "Value": 25000
+            }
+        ],
+        "Messages": []
+    },
+    "Building": {
+        "BuildingInfos": [
+            {
+                "Actual": 2003,
+                "ActualArea": 2751,
+                "AdjustedBasePrice": 97.44,
+                "BuildingNo": 1,
+                "DepreciatedValue": 246133,
+                "Effective": 2003,
+                "EffectiveArea": 2526,
+                "GrossArea": 2751,
+                "HeatedArea": 2247,
+                "Message": null,
+                "PercentComp": 1,
+                "PercentageGood": 84,
+                "ReplacementCostNew": 293016,
+                "RollYear": 2020,
+                "SegNo": 1,
+                "TotalAdjustedPoints": 100,
+                "TraversePoints": "Y",
+                "improvementModelDesc": "Single Family Residential"
+            },
+            {
+                "Actual": 2003,
+                "ActualArea": 2751,
+                "AdjustedBasePrice": 98.6,
+                "BuildingNo": 1,
+                "DepreciatedValue": 249064,
+                "Effective": 2003,
+                "EffectiveArea": 2526,
+                "GrossArea": 2751,
+                "HeatedArea": 2247,
+                "Message": null,
+                "PercentComp": 1,
+                "PercentageGood": 85,
+                "ReplacementCostNew": 293016,
+                "RollYear": 2019,
+                "SegNo": 1,
+                "TotalAdjustedPoints": 100,
+                "TraversePoints": "Y",
+                "improvementModelDesc": "Single Family Residential"
+            },
+            {
+                "Actual": 2003,
+                "ActualArea": 2751,
+                "AdjustedBasePrice": 99.76,
+                "BuildingNo": 1,
+                "DepreciatedValue": 251994,
+                "Effective": 2003,
+                "EffectiveArea": 2526,
+                "GrossArea": 2751,
+                "HeatedArea": 2247,
+                "Message": null,
+                "PercentComp": 1,
+                "PercentageGood": 86,
+                "ReplacementCostNew": 293016,
+                "RollYear": 2018,
+                "SegNo": 1,
+                "TotalAdjustedPoints": 100,
+                "TraversePoints": "Y",
+                "improvementModelDesc": "Single Family Residential"
+            },
+            {
+                "Actual": 2014,
+                "ActualArea": 192,
+                "AdjustedBasePrice": 46.55,
+                "BuildingNo": 2,
+                "DepreciatedValue": 8938,
+                "Effective": 2014,
+                "EffectiveArea": 192,
+                "GrossArea": 192,
+                "HeatedArea": 0,
+                "Message": null,
+                "PercentComp": 1,
+                "PercentageGood": 95,
+                "ReplacementCostNew": 9408,
+                "RollYear": 2020,
+                "SegNo": 1,
+                "TotalAdjustedPoints": 100,
+                "TraversePoints": "Y",
+                "improvementModelDesc": "Single Family Residential"
+            },
+            {
+                "Actual": 2014,
+                "ActualArea": 192,
+                "AdjustedBasePrice": 47.04,
+                "BuildingNo": 2,
+                "DepreciatedValue": 9032,
+                "Effective": 2014,
+                "EffectiveArea": 192,
+                "GrossArea": 192,
+                "HeatedArea": 0,
+                "Message": null,
+                "PercentComp": 1,
+                "PercentageGood": 96,
+                "ReplacementCostNew": 9408,
+                "RollYear": 2019,
+                "SegNo": 1,
+                "TotalAdjustedPoints": 100,
+                "TraversePoints": "Y",
+                "improvementModelDesc": "Single Family Residential"
+            },
+            {
+                "Actual": 2014,
+                "ActualArea": 192,
+                "AdjustedBasePrice": 47.53,
+                "BuildingNo": 2,
+                "DepreciatedValue": 9126,
+                "Effective": 2014,
+                "EffectiveArea": 192,
+                "GrossArea": 192,
+                "HeatedArea": 0,
+                "Message": null,
+                "PercentComp": 1,
+                "PercentageGood": 97,
+                "ReplacementCostNew": 9408,
+                "RollYear": 2018,
+                "SegNo": 1,
+                "TotalAdjustedPoints": 100,
+                "TraversePoints": "Y",
+                "improvementModelDesc": "Single Family Residential"
+            }
+        ],
+        "Messages": [
+            {
+                "Message": "",
+                "Year": 2020
+            },
+            {
+                "Message": "",
+                "Year": 2019
+            },
+            {
+                "Message": "",
+                "Year": 2018
+            }
+        ]
+    },
+    "ClassifiedAgInfo": {
+        "Acreage": 0,
+        "CalculatedValue": 0,
+        "LandCode": null,
+        "LandUse": null,
+        "Message": null,
+        "UnitPrice": 0
+    },
+    "Completed": true,
+    "District": 2,
+    "ExtraFeature": {
+        "ExtraFeatureInfos": [
+            {
+                "ActualYearBuilt": 2003,
+                "AdjustedUnitPrice": 29.24,
+                "DepreciatedValue": 2193,
+                "Description": "Aluminum Modular Fence",
+                "Message": null,
+                "PercentCondition": 86,
+                "RollYear": 2020,
+                "Units": 75,
+                "UseCode": "0054"
+            },
+            {
+                "ActualYearBuilt": 2003,
+                "AdjustedUnitPrice": 13.76,
+                "DepreciatedValue": 3124,
+                "Description": "Wood Fence",
+                "Message": null,
+                "PercentCondition": 86,
+                "RollYear": 2020,
+                "Units": 227,
+                "UseCode": "0052"
+            },
+            {
+                "ActualYearBuilt": 2003,
+                "AdjustedUnitPrice": 29.59,
+                "DepreciatedValue": 2219,
+                "Description": "Aluminum Modular Fence",
+                "Message": null,
+                "PercentCondition": 87,
+                "RollYear": 2019,
+                "Units": 75,
+                "UseCode": "0054"
+            },
+            {
+                "ActualYearBuilt": 2003,
+                "AdjustedUnitPrice": 13.92,
+                "DepreciatedValue": 3160,
+                "Description": "Wood Fence",
+                "Message": null,
+                "PercentCondition": 87,
+                "RollYear": 2019,
+                "Units": 227,
+                "UseCode": "0052"
+            },
+            {
+                "ActualYearBuilt": 2003,
+                "AdjustedUnitPrice": 29.92,
+                "DepreciatedValue": 2244,
+                "Description": "Aluminum Modular Fence",
+                "Message": null,
+                "PercentCondition": 88,
+                "RollYear": 2018,
+                "Units": 75,
+                "UseCode": "0054"
+            },
+            {
+                "ActualYearBuilt": 2003,
+                "AdjustedUnitPrice": 14.08,
+                "DepreciatedValue": 3196,
+                "Description": "Wood Fence",
+                "Message": null,
+                "PercentCondition": 88,
+                "RollYear": 2018,
+                "Units": 227,
+                "UseCode": "0052"
+            }
+        ],
+        "Messages": [
+            {
+                "Message": "",
+                "Year": 2020
+            },
+            {
+                "Message": "",
+                "Year": 2019
+            },
+            {
+                "Message": "",
+                "Year": 2018
+            }
+        ]
+    },
+    "GeoParcel": null,
+    "Land": {
+        "Landlines": [
+            {
+                "AdjustedUnitPrice": 10,
+                "CalculatedValue": 78750,
+                "Depth": 0,
+                "FrontFeet": 0,
+                "LandUse": "GENERAL",
+                "LandlineType": "C",
+                "Message": null,
+                "MuniZone": "R-1",
+                "MuniZoneDescription": null,
+                "PAZoneDescription": "SINGLE FAMILY - GENERAL",
+                "PercentCondition": 1,
+                "RollYear": 2020,
+                "TotalAdjustments": 1,
+                "UnitType": "Square Ft.",
+                "Units": 7875,
+                "UseCode": "00",
+                "Zone": "0100"
+            },
+            {
+                "AdjustedUnitPrice": 8.8,
+                "CalculatedValue": 69300,
+                "Depth": 0,
+                "FrontFeet": 0,
+                "LandUse": "GENERAL",
+                "LandlineType": "C",
+                "Message": null,
+                "MuniZone": "R-1",
+                "MuniZoneDescription": null,
+                "PAZoneDescription": "SINGLE FAMILY - GENERAL",
+                "PercentCondition": 1,
+                "RollYear": 2019,
+                "TotalAdjustments": 1,
+                "UnitType": "Square Ft.",
+                "Units": 7875,
+                "UseCode": "00",
+                "Zone": "0100"
+            },
+            {
+                "AdjustedUnitPrice": 7.35,
+                "CalculatedValue": 57881,
+                "Depth": 0,
+                "FrontFeet": 0,
+                "LandUse": "GENERAL",
+                "LandlineType": "C",
+                "Message": null,
+                "MuniZone": "R-1",
+                "MuniZoneDescription": null,
+                "PAZoneDescription": "SINGLE FAMILY - GENERAL",
+                "PercentCondition": 1,
+                "RollYear": 2018,
+                "TotalAdjustments": 1,
+                "UnitType": "Square Ft.",
+                "Units": 7875,
+                "UseCode": "00",
+                "Zone": "0100"
+            }
+        ],
+        "Messages": [
+            {
+                "Message": "",
+                "Year": 2020
+            },
+            {
+                "Message": "",
+                "Year": 2019
+            },
+            {
+                "Message": "",
+                "Year": 2018
+            }
+        ]
+    },
+    "LegalDescription": {
+        "Description": "11 52 41|SCOTT LAKE MANOR SEC 8 PB 65-117|LOT 24 BLK 57|LOT SIZE 7875 SQ FT|OR 17085-3173 0296 6|F/A/U 30-2111-011-0560",
+        "Message": null,
+        "Number": null
+    },
+    "MailingAddress": {
+        "Address1": "1252 NW 172 TERR",
+        "Address2": "",
+        "Address3": "",
+        "City": "MIAMI",
+        "Country": "",
+        "Message": null,
+        "State": "FL",
+        "ZipCode": "33169-5221"
+    },
+    "Message": "",
+    "OwnerInfos": [
+        {
+            "Description": "",
+            "MarriedFlag": "\u0000",
+            "Message": null,
+            "Name": "LISA WELLS",
+            "PercentageOwn": 0,
+            "Role": null,
+            "ShortDescription": "",
+            "TenancyCd": "\u0000"
+        }
+    ],
+    "PropertyInfo": {
+        "BathroomCount": 2,
+        "BedroomCount": 3,
+        "BuildingActualArea": 2943,
+        "BuildingBaseArea": 0,
+        "BuildingEffectiveArea": 2718,
+        "BuildingGrossArea": 2943,
+        "BuildingHeatedArea": 2247,
+        "DORCode": "0101",
+        "DORDescription": "RESIDENTIAL - SINGLE FAMILY : 1 UNIT",
+        "DORDescriptionCurrent": null,
+        "EncodedFolioAndTaxYear": "N2Y6rn1YGleZ%2buxuLbyl5YR5266qSfSjQxc04ksxtbM%3d",
+        "FloorCount": 1,
+        "FolioNumber": "34-2111-011-0560",
+        "HalfBathroomCount": 0,
+        "HxBaseYear": 2004,
+        "LotSize": 7875,
+        "Message": null,
+        "Municipality": "Miami Gardens",
+        "Neighborhood": 520,
+        "NeighborhoodDescription": "SCOTT LAKE",
+        "ParentFolio": "",
+        "PercentHomesteadCapped": 100,
+        "PlatBook": "65",
+        "PlatPage": "117",
+        "PrimaryZone": "0100",
+        "PrimaryZoneDescription": "SINGLE FAMILY - GENERAL",
+        "ShowCurrentValuesFlag": "Y",
+        "Status": "AC Active",
+        "Subdivision": "342111011",
+        "SubdivisionDescription": "SCOTT LAKE MANOR SEC 8",
+        "UnitCount": 1,
+        "YearBuilt": "Multiple (See Building Info.)"
+    },
+    "RollYear1": 2020,
+    "SalesInfos": [
+        {
+            "DateOfSale": "7/1/1984",
+            "DocumentStamps": 0,
+            "EncodedRecordBookAndPage": "lHVlhHQhIZoJRUYKiXnhi3%2fO0XesGGE9xlhbq7crsQ86uEmmzu6mcA%3d%3d",
+            "GranteeName1": "",
+            "GranteeName2": "",
+            "GrantorName1": "",
+            "GrantorName2": "",
+            "Message": null,
+            "OfficialRecordBook": "12208",
+            "OfficialRecordPage": "1765",
+            "QualificationDescription": "Sales which are qualified",
+            "QualifiedFlag": "Q",
+            "QualifiedSYear": null,
+            "QualifiedSourceCode": "",
+            "ReasonCode": "00",
+            "ReviewCode": null,
+            "SaleId": 3,
+            "SaleInstrument": "",
+            "SalePrice": 13000,
+            "VacantFlag": "\u0000",
+            "ValidCode": null,
+            "VerifyCode": null
+        },
+        {
+            "DateOfSale": "1/1/1986",
+            "DocumentStamps": 0,
+            "EncodedRecordBookAndPage": "lHVlhHQhIZoJRUYKiXnhi04ny2XhSrwksZWevunoCMbhp5PmuFUvLg%3d%3d",
+            "GranteeName1": "",
+            "GranteeName2": "",
+            "GrantorName1": "",
+            "GrantorName2": "",
+            "Message": null,
+            "OfficialRecordBook": "12784",
+            "OfficialRecordPage": "2699",
+            "QualificationDescription": "Sales which are qualified",
+            "QualifiedFlag": "Q",
+            "QualifiedSYear": null,
+            "QualifiedSourceCode": "",
+            "ReasonCode": "00",
+            "ReviewCode": null,
+            "SaleId": 2,
+            "SaleInstrument": "",
+            "SalePrice": 14500,
+            "VacantFlag": "\u0000",
+            "ValidCode": null,
+            "VerifyCode": null
+        },
+        {
+            "DateOfSale": "2/1/1996",
+            "DocumentStamps": 0,
+            "EncodedRecordBookAndPage": "lHVlhHQhIZoJRUYKiXnhiwGzGtNhXUKQgG2WU0ACmtQzDaq87mJrCg%3d%3d",
+            "GranteeName1": "",
+            "GranteeName2": "",
+            "GrantorName1": "",
+            "GrantorName2": "",
+            "Message": null,
+            "OfficialRecordBook": "17085",
+            "OfficialRecordPage": "3173",
+            "QualificationDescription": "Other disqualified",
+            "QualifiedFlag": "U",
+            "QualifiedSYear": null,
+            "QualifiedSourceCode": "",
+            "ReasonCode": "03",
+            "ReviewCode": null,
+            "SaleId": 1,
+            "SaleInstrument": "",
+            "SalePrice": 16000,
+            "VacantFlag": "\u0000",
+            "ValidCode": null,
+            "VerifyCode": null
+        }
+    ],
+    "SiteAddress": [
+        {
+            "Address": "1265 NW 172 TER, Miami Gardens, FL 33169-5220",
+            "BuildingNumber": 1,
+            "City": "Miami Gardens",
+            "HouseNumberSuffix": "",
+            "Message": null,
+            "StreetName": "172",
+            "StreetNumber": 1265,
+            "StreetPrefix": "NW",
+            "StreetSuffix": "TER",
+            "StreetSuffixDirection": "",
+            "Unit": "",
+            "Zip": "33169-5220"
+        }
+    ],
+    "Taxable": {
+        "Messages": [],
+        "TaxableInfos": [
+            {
+                "CityExemptionValue": 50000,
+                "CityTaxableValue": 138841,
+                "CountyExemptionValue": 50000,
+                "CountyTaxableValue": 138841,
+                "Message": null,
+                "RegionalExemptionValue": 50000,
+                "RegionalTaxableValue": 138841,
+                "SchoolExemptionValue": 25000,
+                "SchoolTaxableValue": 163841,
+                "Year": 2020
+            },
+            {
+                "CityExemptionValue": 50000,
+                "CityTaxableValue": 134596,
+                "CountyExemptionValue": 50000,
+                "CountyTaxableValue": 134596,
+                "Message": null,
+                "RegionalExemptionValue": 50000,
+                "RegionalTaxableValue": 134596,
+                "SchoolExemptionValue": 25000,
+                "SchoolTaxableValue": 159596,
+                "Year": 2019
+            },
+            {
+                "CityExemptionValue": 50000,
+                "CityTaxableValue": 131155,
+                "CountyExemptionValue": 50000,
+                "CountyTaxableValue": 131155,
+                "Message": null,
+                "RegionalExemptionValue": 50000,
+                "RegionalTaxableValue": 131155,
+                "SchoolExemptionValue": 25000,
+                "SchoolTaxableValue": 156155,
+                "Year": 2018
+            }
+        ]
+    }
+}
