@@ -1,0 +1,12 @@
+body {
+    overflow: hidden;
+}
+
+.point {
+    fill: #0000FF;
+    /*fill-opacity: 0;*/
+}
+
+.test {
+    fill: #00FF00;
+}
