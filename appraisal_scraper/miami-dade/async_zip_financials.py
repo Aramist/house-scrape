@@ -46,59 +46,19 @@ address_replacements = {
         'EAST': 'E',
         'WEST': 'W'}
 
-INSERT_ASSESS = 'INSERT INTO assessments (year, land_value, building_value, extra_feature_value, property) VALUES(?, ?, ?, ?, ?)'
+INSERT_ASSESS = 'INSERT INTO assessments (year, building_value, land_value, extra_value, listed_area, prop_id) VALUES(?, ?, ?, ?, ?, ?)'
 
-INSERT_LAND = 'INSERT INTO land_parcels (year, land_area, land_area_unit, adjusted_unit_price, property) VALUES(?, ?, ?, ?, ?)'
+INSERT_SALES = 'INSERT INTO sales (price, date, prop_id) VALUES(?, ?, ?)'
 
-INSERT_SALES = 'INSERT INTO sales (price, date, property) VALUES(?, ?, ?)'
-
-INSERT_BUILDINGS = 'INSERT INTO buildings (building_number, year_constructed, building_area, property) VALUES(?, ?, ?, ?)'
+INSERT_BUILDINGS = 'INSERT INTO buildings (building_num, year_constructed, building_area, prop_id) VALUES(?, ?, ?, ?)'
 
 
-def process_addy(addy):
-    addy = addy.upper()
-    addy.replace('  ', ' ')
-    split = addy.split(' ')
-    number = split[0]
-    split = split[1:]
-    digit_set = set(string.digits)
-    # Finds the street name, given it contains a number
-    for n, text in enumerate(split):
-        if set(text).intersection(digit_set):
-            split[n] = ''.join(a for a in split[n] if a in digit_set)
-    split.insert(0, number)
-    preliminary = ' '.join(split)
-    for orig, repl in address_replacements.items():
-        preliminary = preliminary.replace(orig, repl)
-    return preliminary
-
-
-def address_sample(zip_code, db_conn):
+def folio_sample(zip_code, db_conn):
     cursor = db_conn.cursor()
-    query = 'SELECT address, address_id FROM addresses INNER JOIN zip_codes ON addresses.zip_code_id=zip_codes.zip_id WHERE zip_codes.zip_code=?'
+    query = 'SELECT folio, prop_id FROM properties WHERE zip_code=?'
     res = cursor.execute(query, (zip_code,)).fetchall()
     return res
 
-
-def get_folio(addy):
-    params = address_params()
-    params['myAddress'] = process_addy(addy)
-    res = requests.get(URL, params=params, timeout=15).json()
-    if res['Completed']:
-        index = -1
-        for n, entry in enumerate(res['MinimumPropertyInfos']):
-            house_num = int(entry['SiteAddress'].split(' ')[0])
-            given_num = int(addy.split(' ')[0])
-            if house_num == given_num:
-                index = n
-                break
-
-        if index == -1:
-            raise Exception('Could not get folio: {}'.format(addy))
-
-        return res['MinimumPropertyInfos'][index]['Strap']
-    else:
-        raise Exception('Could not get folio: {}'.format(addy))
 
 def get_property_info(folio):
     params = folio_params()
@@ -112,7 +72,7 @@ def get_property_info(folio):
 def build_assessment_rows(property_info):
     '''Assessed values in Assessment>AssessmentInfos[]>LandValue/BuildingOnlyValue/ExtraFeatureValue/Year
     Area: Land>Landlines[]>Units/AdjustedUnitPrice/UnitType/RollYear'''
-    assessments = list()
+    assessments = dict()
 
     if 'Assessment' not in property_info:
         return None
@@ -122,34 +82,28 @@ def build_assessment_rows(property_info):
         land_value = annual_assess['LandValue']
         building_value = annual_assess['BuildingOnlyValue']
         extra_feat_value = annual_assess['ExtraFeatureValue']
-        assessments.append([year, land_value, building_value, extra_feat_value])
-
-    return assessments
-
-
-def build_land_rows(property_info):
-    parcels = list()
-
-    # The schema is designed as such to cover properties for which multiple lots are joined, but recorded separately in the db
+        assessments[year] = [year, building_value, land_value, extra_feat_value, 0]
 
     if 'Land' not in property_info:
-        return None
+        return list(assessments.values())
 
     for annual_land in property_info['Land']['Landlines']:
         year = annual_land['RollYear']
+        if year not in assessments:
+            continue
+
         land_area = annual_land['Units']
         land_area_unit = annual_land['UnitType']
-        adjusted_price = annual_land['AdjustedUnitPrice']
-        '''
-        if 'Front' in land_area_unit:
-            print('Front foot: ')
-            continue
-        '''
-        if 'Ft.' in land_area_unit and land_area < 10:
-            continue
-        parcels.append([year, land_area, land_area_unit, adjusted_price])
+        depth = annual_land['Depth']
 
-    return parcels
+        if 'Front' in 'UnitType':
+            land_area *= depth
+        if 'Acre' in 'UnitType':
+            land_area *= 43560
+
+        assessments[year][-1] = land_area
+
+    return list(assessments.values())
 
 
 def build_sales_rows(property_info):
@@ -190,26 +144,18 @@ def build_building_rows(property_info):
     return buildings
 
 
-def record_address(conn, q, addys):
-    addy, addy_id = addys
+def update_record(conn, q, folio_w_id):
+    folio, prop_id = folio_w_id
 
     try:
-        prop_info = get_property_info(get_folio(addy))
+        prop_info = get_property_info(folio)
     except:
         q.put(None)
         return None
 
-    residential = 'RESIDENTIAL' in prop_info['PropertyInfo']['DORDescription']
-
-    if not residential:
-        print('Not residential: {}'.format(addy))
-        q.put(None)
-        return None
-
-    assess = [n + [addy_id] for n in build_assessment_rows(prop_info)]
-    sales = [n + [addy_id] for n in build_sales_rows(prop_info)]
-    land_units = [n + [addy_id] for n in build_land_rows(prop_info)]
-    buildings = [n + [addy_id] for n in build_building_rows(prop_info)]
+    assess = [n + [prop_id] for n in build_assessment_rows(prop_info)]
+    sales = [n + [prop_id] for n in build_sales_rows(prop_info)]
+    buildings = [n + [prop_id] for n in build_building_rows(prop_info)]
 
     return_data = list()
 
@@ -217,15 +163,13 @@ def record_address(conn, q, addys):
         return_data.append((INSERT_ASSESS, assess))
     if sales:
         return_data.append((INSERT_SALES, sales))
-    if land_units:
-        return_data.append((INSERT_LAND, land_units))
     if buildings:
         return_data.append((INSERT_BUILDINGS, buildings))
 
     q.put(return_data)
 
 
-def queue_worker(conn, q, num_addys, stopped):
+def queue_worker(conn, q, num_props, stopped):
     counter = 0
     while not stopped():
         try:
@@ -242,11 +186,11 @@ def queue_worker(conn, q, num_addys, stopped):
             conn.cursor().executemany(query, data)
 
         counter += 1
-        print('Progress: {}/{}'.format(counter, num_addys))
+        print('Progress: {}/{}'.format(counter, num_props))
         q.task_done()
 
 
-def insert_address_financials(zip_code_scrape):
+def insert_property_financials(zip_code_scrape):
     try:
         conn = sqlite3.connect(DB_PATH, check_same_thread=False)
     except:
@@ -254,18 +198,18 @@ def insert_address_financials(zip_code_scrape):
         return
 
     # DELETE THIS BEFORE RUNNING FR FR
-    addys = address_sample(zip_code_scrape, conn)
+    folios = folio_sample(zip_code_scrape, conn)
     sql_queue = Queue()
     sql_stopped = False
     check_stopped = lambda: sql_stopped
 
-    num_addys = len(addys)
+    num_folios = len(folios)
 
-    Thread(target=partial(queue_worker, conn, sql_queue, num_addys, check_stopped), daemon=False).start()
+    Thread(target=partial(queue_worker, conn, sql_queue, num_folios, check_stopped), daemon=False).start()
 
     # Using the 'with' block, code execution pauses until all tasks complete
     with ThreadPoolExecutor(max_workers=50) as pool:
-        pool.map(partial(record_address, conn, sql_queue), addys)
+        pool.map(partial(update_record, conn, sql_queue), folios)
 
     sql_queue.join()
     sql_stopped = True
@@ -278,7 +222,7 @@ def runner():
     parser = argparse.ArgumentParser(description='Scrapes property info from the Miami-Dade County Property Appraiser')
     parser.add_argument('zipcode', type=int)
     args = parser.parse_args()
-    insert_address_financials(args.zipcode)
+    insert_property_financials(args.zipcode)
 
 
 if __name__ == '__main__':

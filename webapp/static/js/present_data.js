@@ -6,11 +6,11 @@ const innerHeight = height - 2 * padding;
 
 
 var x_accessor = function(data) {
-    return data['lat'];
+    return data['lon'];
 }
 
 var y_accessor = function(data) {
-    return data['lon'];
+    return data['lat'];
 };
 
 
@@ -24,7 +24,7 @@ var fix_url = function(link, params) {
 var get_data = function(svg) {
     let parameters = {
         method: "landValue",
-        lat: "25.965789",
+        lat: "25.960789",
         lon: "-80.2208063"
     };
 
@@ -35,6 +35,8 @@ var get_data = function(svg) {
                 return;
             }
             res_json = JSON.parse(res);
+
+            console.log(res_json);
 
             let data_tree = d3.quadtree()
                 .x(x_accessor)
@@ -146,7 +148,7 @@ var display_data = function(svg, data_tree) {
         .attr('cy', (d) => {
             return lon(d['lon']);
         })
-        .attr('r', 1);
+        .attr('r', 2);
 
     centroids = moving_avgs(quadtree, extent, 8e-4, 5e-3);
 

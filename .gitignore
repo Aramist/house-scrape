@@ -1,5 +1,7 @@
 osm_cache/states
 .DS_Store/
+*.sqlite
+*.sqlite-journal
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

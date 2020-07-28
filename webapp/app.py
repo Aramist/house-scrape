@@ -9,30 +9,15 @@ app = Flask(__name__)
 
 RANGE_QUERY = '''
 SELECT
-    address_id,
+    prop_id,
     lat,
-    lon,
-    adjusted_unit_price,
-    land_area_unit,
-    land_area
-FROM
-    land_parcels a
-INNER JOIN
-    addresses b
-ON
-    a.property = b.address_id
-WHERE
-    year = 2020 AND
-    address_id
+    lon
+FROM properties
+WHERE prop_id
 IN (
     SELECT
-        address_id
-    FROM
-        addresses c
-    INNER JOIN
-        coord_index d
-    ON
-        c.coord_tree_index = d.id
+        id
+    FROM coord_index
     WHERE
         minLat >= ? AND maxLat <= ? AND
         minLon >= ? AND maxLon <= ?
@@ -50,14 +35,14 @@ def data_request():
             return jsonify({'completed': False, 'message': 'Missing latitude or longitude'})
         lat, lon = float(lat), float(lon)
 
-        lat = [lat - 5e-1, lat + 5e-1]
-        lon = [lon - 5e-1, lon + 5e-1]
+        lat = [lat - 8e-3, lat + 8e-3]
+        lon = [lon - 8e-3, lon + 8e-3]
         lat.extend(lon)
 
         cursor = conn.cursor()
         res = cursor.execute(RANGE_QUERY, lat).fetchall()
 
-        res_json = [{'id': a[0], 'lat': a[1], 'lon': a[2], 'land_value': a[3], 'land_unit': a[4], 'land_area': a[5]} for a in res]
+        res_json = [{'id': a[0], 'lon': a[1], 'lat': a[2], 'land_value': 0, 'land_unit': 0, 'land_area': 0} for a in res]
         return jsonify(res_json)
 
 
